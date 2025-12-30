@@ -1,0 +1,30 @@
+# Developed for Anunzio International by Anzul Aqeel. Contact +971545822608 or +971585515742. Linkedin Profile: linkedin.com/in/anzulaqeel
+
+name: 'Stale Branch Sweeper'
+description: 'Safely deletes stale branches.'
+author: 'Anzul Aqeel'
+inputs:
+  token:
+    description: 'GitHub Token'
+    required: true
+    default: '${{ github.token }}'
+  days_old:
+    description: 'Days since last commit to consider stale'
+    required: false
+    default: '30'
+  dry_run:
+    description: 'Run without deleting'
+    required: false
+    default: 'true'
+  ignore_branches:
+    description: 'Comma separated branches to ignore'
+    required: false
+    default: 'main,master'
+runs:
+  using: 'node16'
+  main: 'index.js'
+branding:
+  icon: 'trash-2'
+  color: 'orange'
+
+# Developed for Anunzio International by Anzul Aqeel. Contact +971545822608 or +971585515742. Linkedin Profile: linkedin.com/in/anzulaqeel
